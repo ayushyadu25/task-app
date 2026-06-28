@@ -1,0 +1,191 @@
+.boardPage {
+  display: grid;
+  gap: 1rem;
+}
+
+.boardHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.boardHeader h1 {
+  margin: 0.2rem 0;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1;
+}
+
+.boardHeader p:not(:global(.eyebrow)) {
+  max-width: 52rem;
+  color: var(--muted);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: end;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 0.75rem;
+}
+
+.toolbar label {
+  min-width: 180px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.column {
+  display: grid;
+  gap: 0.75rem;
+  min-height: 22rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  padding: 0.75rem;
+}
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.columnHeader h2 {
+  font-size: 1rem;
+}
+
+.columnHeader span {
+  display: grid;
+  min-width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.taskList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.emptyColumn {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  padding: 1rem;
+  text-align: center;
+}
+
+.taskCard {
+  display: grid;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 0.85rem;
+}
+
+.taskCard.overdue {
+  border-left-color: var(--danger);
+}
+
+.taskHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.5rem;
+}
+
+.taskHeader h3 {
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.priority {
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 0.25rem 0.48rem;
+  text-transform: uppercase;
+}
+
+.high {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.medium {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.low {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.taskDescription {
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.taskMeta {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.taskMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.taskActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+@media (max-width: 980px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .boardHeader {
+    display: grid;
+  }
+
+  .toolbar label {
+    width: 100%;
+  }
+}

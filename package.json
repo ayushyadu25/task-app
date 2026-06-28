@@ -1,0 +1,24 @@
+{
+  "name": "taskflow",
+  "version": "1.0.0",
+  "description": "TaskFlow split into separately deployable frontend and backend apps.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n BACKEND,FRONTEND -c blue,green \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "backend:dev": "npm --prefix backend run dev",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "backend:start": "npm --prefix backend start",
+    "frontend:build": "npm --prefix frontend run build",
+    "check": "npm --prefix backend run check && npm --prefix frontend run check"
+  },
+  "keywords": [
+    "mern",
+    "task-management",
+    "gemini"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
