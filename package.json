@@ -4,6 +4,8 @@
   "description": "TaskFlow split into separately deployable frontend and backend apps.",
   "type": "module",
   "scripts": {
+    "postinstall": "npm --prefix backend install",
+    "start": "npm --prefix backend start",
     "dev": "concurrently -k -n BACKEND,FRONTEND -c blue,green \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
     "backend:dev": "npm --prefix backend run dev",
     "frontend:dev": "npm --prefix frontend run dev",
