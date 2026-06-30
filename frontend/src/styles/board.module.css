@@ -14,11 +14,13 @@
   margin: 0.2rem 0;
   font-size: clamp(2rem, 6vw, 3rem);
   line-height: 1;
+  overflow-wrap: anywhere;
 }
 
 .boardHeader p:not(:global(.eyebrow)) {
   max-width: 52rem;
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .backLink {
@@ -42,6 +44,7 @@
 }
 
 .toolbar label {
+  flex: 1 1 180px;
   min-width: 180px;
 }
 
@@ -183,9 +186,80 @@
 @media (max-width: 640px) {
   .boardHeader {
     display: grid;
+    align-items: stretch;
+  }
+
+  .boardHeader h1 {
+    font-size: clamp(1.8rem, 12vw, 2.4rem);
+  }
+
+  .backLink {
+    margin-bottom: 0.35rem;
+  }
+
+  .toolbar {
+    display: grid;
+    gap: 0.65rem;
+    padding: 0.65rem;
   }
 
   .toolbar label {
+    min-width: 0;
     width: 100%;
+  }
+
+  .columns {
+    gap: 0.8rem;
+  }
+
+  .column {
+    min-height: auto;
+    padding: 0.65rem;
+  }
+
+  .columnHeader {
+    position: sticky;
+    top: 6.9rem;
+    z-index: 5;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    padding: 0.55rem 0.65rem;
+  }
+
+  .taskList {
+    gap: 0.65rem;
+  }
+
+  .taskCard {
+    gap: 0.65rem;
+    padding: 0.8rem;
+  }
+
+  .taskHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .priority {
+    justify-self: start;
+  }
+
+  .taskMeta {
+    font-size: 0.84rem;
+  }
+
+  .taskActions {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .taskActions :global(.icon-button) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .taskActions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

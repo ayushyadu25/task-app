@@ -2,6 +2,7 @@
   display: grid;
   min-height: calc(100vh - 7rem);
   place-items: center;
+  padding: 1rem 0;
 }
 
 .authPanel {
@@ -19,6 +20,10 @@
   display: flex;
   align-items: center;
   gap: 0.9rem;
+}
+
+.authIntro > div {
+  min-width: 0;
 }
 
 .authIntro h1 {
@@ -49,4 +54,37 @@
 .authSwitch a {
   color: var(--accent-strong);
   font-weight: 900;
+}
+
+@media (max-width: 640px) {
+  .authShell {
+    min-height: calc(100vh - 8.5rem);
+    align-items: start;
+    padding: 0.25rem 0 1rem;
+  }
+
+  .authPanel {
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .authIntro {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .authIntro h1 {
+    font-size: clamp(1.45rem, 9vw, 1.9rem);
+  }
+
+  .authIcon {
+    width: 2.65rem;
+    height: 2.65rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .authIntro {
+    display: grid;
+  }
 }

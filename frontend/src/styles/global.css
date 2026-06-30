@@ -42,9 +42,14 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
   font-family:
@@ -83,6 +88,19 @@ h2,
 h3,
 p {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+button,
+label,
+input,
+textarea,
+select {
+  overflow-wrap: anywhere;
 }
 
 label {
@@ -189,7 +207,34 @@ select:focus {
 }
 
 @media (max-width: 640px) {
+  body {
+    font-size: 0.96rem;
+  }
+
+  input,
+  textarea,
+  select {
+    min-height: 2.85rem;
+    font-size: 1rem;
+    padding: 0.78rem 0.85rem;
+  }
+
   .button {
+    min-height: 2.85rem;
     width: 100%;
+  }
+
+  .button.compact {
+    min-height: 2.45rem;
+  }
+
+  .icon-button {
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: 0 0 auto;
+  }
+
+  .error-text {
+    padding: 0.8rem;
   }
 }

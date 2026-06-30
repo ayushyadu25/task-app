@@ -1,5 +1,6 @@
 .appShell {
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 .main {
@@ -44,7 +45,9 @@
 .navLinks {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.35rem;
+  min-width: 0;
 }
 
 .navLinks a {
@@ -69,6 +72,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 0.5rem;
+  min-width: 0;
 }
 
 .userChip {
@@ -87,19 +91,54 @@
 @media (max-width: 720px) {
   .navbar {
     grid-template-columns: 1fr auto;
+    gap: 0.65rem;
+    padding: 0.65rem 0.75rem;
   }
 
   .navLinks {
     order: 3;
     grid-column: 1 / -1;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.05rem;
+    scrollbar-width: none;
+  }
+
+  .navLinks::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navLinks a {
+    min-height: 2.35rem;
+    white-space: nowrap;
   }
 
   .main {
     width: min(100% - 1rem, 1180px);
-    padding-top: 1rem;
+    padding: 1rem 0 1.6rem;
   }
 
   .userChip {
     display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand {
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .brandMark {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .navbar {
+    padding-inline: 0.55rem;
+  }
+
+  .navActions {
+    gap: 0.35rem;
   }
 }

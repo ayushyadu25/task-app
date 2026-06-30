@@ -14,6 +14,7 @@
   margin-top: 0.2rem;
   font-size: clamp(2rem, 6vw, 3.1rem);
   line-height: 1;
+  overflow-wrap: anywhere;
 }
 
 .createForm {
@@ -46,11 +47,14 @@
 
 .boardCard h3 {
   font-size: 1.25rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .boardCard p {
   color: var(--muted);
   line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .boardIcon {
@@ -100,5 +104,73 @@
   .header,
   .createForm {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard {
+    gap: 1rem;
+  }
+
+  .header {
+    align-items: stretch;
+  }
+
+  .header h1 {
+    font-size: clamp(1.8rem, 12vw, 2.45rem);
+  }
+
+  .createForm {
+    gap: 0.65rem;
+    padding: 0.65rem;
+  }
+
+  .boardGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .boardCard {
+    min-height: auto;
+    padding: 0.9rem;
+  }
+
+  .boardIcon {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .cardActions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+  }
+
+  .cardActions :global(.button.compact) {
+    width: 100%;
+  }
+
+  .cardEditForm .cardActions {
+    grid-template-columns: auto auto;
+    justify-content: start;
+  }
+
+  .emptyState {
+    padding: 1.25rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 380px) {
+  .cardActions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cardActions :global(.button.compact) {
+    grid-column: 1 / -1;
+  }
+
+  .cardEditForm .cardActions {
+    grid-template-columns: auto auto;
   }
 }
