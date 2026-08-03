@@ -46,5 +46,5 @@ Gemini was used because it is fast, simple to integrate, and useful for generati
 Clone the project:
 
 ```bash
-git clone <your-repo-link>
+git clone <repo-link>
 cd taskProject
